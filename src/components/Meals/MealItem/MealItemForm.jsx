@@ -2,9 +2,11 @@ import React from 'react'
 
 const MealItemForm = () => {
     return (
-        <div>
-            🤭 
-        </div>
+        <form>
+            <label>Amount</label>
+            <input type="number" placeholder='1' />
+            <input type="submit" value={'+ Add'} />
+        </form>
     )
 }
 
