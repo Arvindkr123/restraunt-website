@@ -3,8 +3,8 @@ import classes from './Model.module.css'
 import ReactDOM from 'react-dom'
 
 
-export const Backdrop = props => {
-    return <div className={classes.backdrop}></div>
+export const Backdrop = ({onClick}) => {
+    return <div onClick={onClick} className={classes.backdrop}></div>
 }
 
 export const ModelOverlay = props => {
@@ -13,11 +13,11 @@ export const ModelOverlay = props => {
     </div>
 }
 const portalElement = document.getElementById('overlays');
-const Model = (props) => {
+const Model = ({onClose, children}) => {
     return (
         <React.Fragment>
-            {ReactDOM.createPortal(<Backdrop />, portalElement)}
-            {ReactDOM.createPortal(<ModelOverlay>{props.children}</ModelOverlay>, portalElement)}
+            {ReactDOM.createPortal(<Backdrop onClick={onClose} />, portalElement)}
+            {ReactDOM.createPortal(<ModelOverlay>{children}</ModelOverlay>, portalElement)}
         </React.Fragment>
     )
 }
