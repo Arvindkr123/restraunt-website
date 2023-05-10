@@ -10,6 +10,7 @@ const Cart = ({ onHideCart }) => {
             ))}
         </ul>
     );
+    
 
     return (
         <Model onClose={onHideCart}>
