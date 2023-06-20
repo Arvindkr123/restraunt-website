@@ -19,7 +19,7 @@ const cartReducer = (state, action) => {
         ...existingCartItem,
         amount: existingCartItem.amount + action.item.amount
       }
-      updatedItems = [...state.items];
+      updatedItems = [...state.items]; // copy the values 
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       updatedItems = state.items.concat(action.item);
